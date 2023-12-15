@@ -1,3 +1,4 @@
+/*
 const expand1 = document.getElementById("expand1")
 const expand2 = document.getElementById("expand2")
 const expand3 = document.getElementById("expand3")
@@ -43,4 +44,13 @@ expand4.addEventListener("click", e=>{
         expand4.innerText = "Expand"
     }
 })
+*/
+document.addEventListener("click", e => {
+    if(!e.target.matches(".expand-button")) return
 
+    const card = e.target.closest('.card')
+    const cardBody = card.querySelector('.card-body')
+
+    cardBody.classList.toggle("show")
+    e.target.innerText = e.target.innerText === "Expand" ? "Collapse" : "Expand"
+})
